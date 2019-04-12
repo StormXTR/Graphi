@@ -52,4 +52,4 @@ client.on("message", msg => {
 
 });
 
-client.login(ayar.token);
+client.login(process.env.TOKEN);
