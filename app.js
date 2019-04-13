@@ -23,6 +23,18 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.on("messageDelete", (messageDelete) =>{
+    let kanal = messageDelete.guild.channels.find(ch => ch.name === "log");
+
+    let mesajlog = new Discord.RichEmbed()
+    .setTitle(messageDelete.channel.name + " adlı kanaldan " + messageDelete.author.tag + " adlı kişinin mesajı silindi.")
+    .setColor("RANDOM")
+    .addField("Mesaj İçeriği", messageDelete.content)
+    .addField(messageDelete.createdTimestamp);
+
+    kanal.send(mesajlog);
+});
+
 client.on("guildMemberAdd", member => {
     let kanal = member.guild.channels.find(ch => ch.name === `gelen`);
     let rol = member.guild.roles.find(rol => rol.name === "Üye");    
