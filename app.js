@@ -28,10 +28,10 @@ client.on("messageDelete", (messageDelete) =>{
     if(!kanal) return console.log(kanal.name + " adlı kanal bulunamadı!");
 
     let mesajlog = new Discord.RichEmbed()
-    .setTitle(`<#${messageDelete.channel.id}>` + " adlı kanaldan " + messageDelete.author.tag + " adlı kişinin mesajı silindi.")
+    .setTitle(messageDelete.channel.name + " adlı kanaldan " + messageDelete.author.tag + " adlı kişinin mesajı silindi.")
     .setColor("RANDOM")
     .addField("Mesaj İçeriği", messageDelete.content, true)
-    .addField("Silinme Zamanı", new Date(), true)
+    .addField("Silinme Zamanı", new Date(hours, minutes, seconds), true)
     .setThumbnail(client.user.avatarURL)
     .setFooter(client.user.username + " v1.0" , client.user.avatarURL);
 
