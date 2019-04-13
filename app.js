@@ -24,14 +24,9 @@ client.on("ready", () => {
 });
 
 client.on("guildMemberAdd", member => {
-    let kanal = member.guild.channels.find(ch => ch.name === `kanal`);
-    if(!kanal){
-        member.guild.createChannel("kanal", "text")
-        .then(console.log)
-        .catch(console.error);
-    }else{
-        kanal.send(`${member.user.tag} adlı kişi katıldı ve sunucumuz ${member.user.size} kişi oldu!`);
-    }
+    let kanal = member.guild.channels.find(ch => ch.name === `gelen-giden`);
+    kanal.send(`${member.user.tag} adlı kişi sunucuya katıldı. Sunucumuz artık ${client.user.size} kişi oldu!`);
+    
 });
   
 client.on("guildMemberRemove", member => {
