@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (client, msg, args) => {
 
-    var miktar = args.join(" ").slice(22);
+    let miktar = args.join(" ").slice(0);
 
     if (!msg.member.hasPermission("MANAGE_MESSAGES")){
         return msg.reply("Bu komutu kullanmak için gerekli izine sahip değilsin!");
