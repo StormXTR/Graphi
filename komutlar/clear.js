@@ -8,7 +8,7 @@ module.exports.run = async (client, msg, args) => {
         return msg.reply("Bu komutu kullanmak için gerekli izine sahip değilsin!");
     }else{
         msg.channel.bulkDelete(miktar).then(() => {
-            msg.channel.send("`" + miktar + "` kadar mesaj silindi!").then(msg => msg.delete(3000));
+            msg.channel.send("`" + miktar + "` tane mesaj silindi!").then(msg => msg.delete(3000));
         });
     }
 
