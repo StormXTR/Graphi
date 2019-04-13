@@ -30,7 +30,7 @@ client.on("guildMemberAdd", member => {
         .then(console.log)
         .catch(console.error);
     }else{
-        kanal.send("merhaba dünya");
+        kanal.send(`${member.user.tag} adlı kişi katıldı ve sunucumuz ${member.user.size} kişi oldu!`);
     }
 });
   
