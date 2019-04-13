@@ -20,7 +20,7 @@ client.commands = new Discord.Collection();
         });
     });
 client.on("ready", () => {
-  console.log(`Logged in as ${client.user.tag} ${client.guild.memberCount}!`);
+  console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on("guildMemberAdd", member => {
