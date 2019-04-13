@@ -19,9 +19,7 @@ client.commands = new Discord.Collection();
             client.commands.set(props.help.name, props);
         });
     });
-
 client.on("ready", () => {
-    client.user.setStatus("online");
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
@@ -30,7 +28,7 @@ client.on("guildMemberAdd", member => {
     if(!kanal){
         return console.log("gelen-giden adında bir kanal yok!");
     }else {
-        kanal.send("Hoşgeldin `" + member.user.tag + "` seninle beraber `" + (client.users.size - 1) + "` kişi olduk!");
+        kanal.send("Hoşgeldin `" + member.user.tag + "` seninle beraber `" + (client.guild.memberCount) + "` kişi olduk!");
         console.log((client.users.size - 1) + " Kişi oldu!");
         return;
     }
