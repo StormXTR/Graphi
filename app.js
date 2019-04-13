@@ -25,11 +25,17 @@ client.on("ready", () => {
 
 client.on("guildMemberAdd", member => {
     let kanal = member.guild.channels.find(ch => ch.name === `gelen-giden`);
-    let rol = member.guild.roles.find(rol => rol.name === "Üye");
-    
-    kanal.send("Hoşgeldin, `"+ `${member.user.tag}` + "` seninle beraber `" + `${member.guild.members.size}` + "` kişi olduk"); 
-    kanal.send("Bot başarılı bir şekilde `" + `${rol.name}` + "` rolünü verdi!")
+    let rol = member.guild.roles.find(rol => rol.name === "Üye");    
     member.addRole(rol).catch(console.error);
+
+    let embed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setTitle("gelen-giden")
+    .addField("İsim",member.user.tag)
+    .addField("Kişi Sayısı",member.guild.members.size)
+    .addField("Rol",rol.name);
+
+    kanal.send(embed);
 });
   
 client.on("guildMemberRemove", member => {
