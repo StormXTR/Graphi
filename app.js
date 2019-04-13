@@ -31,7 +31,6 @@ client.on("messageDelete", (messageDelete) =>{
     .setTitle(messageDelete.channel.name + " adlı kanaldan " + messageDelete.author.tag + " adlı kişinin mesajı silindi.")
     .setColor("RANDOM")
     .addField("Mesaj İçeriği", messageDelete.content, true)
-    .addField("Silinme Zamanı", new Date().getHours + ":" + new Date().getMinutes + ":" + new Date().setSeconds, true)
     .setThumbnail(client.user.avatarURL)
     .setFooter(client.user.username + " v1.0" , client.user.avatarURL);
 
