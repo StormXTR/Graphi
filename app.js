@@ -26,12 +26,12 @@ client.on("ready", () => {
 client.on("guildMemberAdd", member => {
     let kanal = member.guild.channels.find(ch => ch.name === `kanal`);
     if(!kanal){
-        member.guild.createChannel("kanal", "text")
+        member.guild.createChannel("kanal", "voice")
         .then(console.log)
         .catch(console.error);
     }else{
-        msg.channel.send("merhaba dünya!")
-}
+        kanal.send("merhaba dünya");
+    }
 });
   
 client.on("guildMemberRemove", member => {
