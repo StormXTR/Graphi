@@ -24,13 +24,13 @@ client.on("ready", () => {
 });
 
 client.on("guildMemberAdd", member => {
-    let kanal = member.guild.channels.find(ch => ch.name === `gelen-giden`);
+    let kanal = member.guild.channels.find(ch => ch.name === `gelen`);
     let rol = member.guild.roles.find(rol => rol.name === "Üye");    
     member.addRole(rol).catch(console.error);
 
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle("gelen-giden kanal log")
+    .setTitle("gelen kanal log")
     .setThumbnail(member.user.avatarURL)
     .addField("İsim",member.user.tag)
     .addField("Kişi Sayısı",member.guild.members.size)
@@ -41,7 +41,17 @@ client.on("guildMemberAdd", member => {
 });
   
 client.on("guildMemberRemove", member => {
-    console.log(`${client.users.size} kişi kaldı!`);
+    let kanal = member.guild.channels.find(ch => ch.name === `gelen`);
+    
+    let embed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setTitle("giden kanal log")
+    .setThumbnail(member.user.avatarURL)
+    .addField("İsim",member.user.tag)
+    .addField("Kişi Sayısı",member.guild.members.size)
+    .setFooter("Graphi Bot v1.0");
+
+    kanal.send(embed);
 });
 
 client.on("message", msg => {
