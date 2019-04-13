@@ -25,7 +25,7 @@ client.on("ready", () => {
 
 client.on("guildMemberAdd", member => {
     let kanal = member.guild.channels.find(ch => ch.name === `gelen-giden`);
-    kanal.send("`" + member.user.tag + "` adlı kişi sunucuya katıldı. Sunucumuz artık `" + client.user.size + "` kişi oldu! ");
+    kanal.send("`" + member.user.tag + "` adlı kişi sunucuya katıldı. Sunucumuz artık `" + client.users.size + "` kişi oldu! ");
     
 });
   
