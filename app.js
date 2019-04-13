@@ -27,7 +27,7 @@ client.on("guildMemberAdd", member => {
     let kanal = member.guild.channels.find(ch => ch.name === `gelen-giden`);
     kanal.send("Hoşgeldin, `"+ `${member.user.tag}` + "` seninle beraber `" + `${member.guild.members.size}` + "` kişi olduk"); 
     
-    let rol = msg.guild.roles.find(rol => rol.name === "Üye");
+    let rol = member.guild.roles.find(rol => rol.name === "Üye");
 
     member.addRole(rol).catch(console.error);
 });
