@@ -26,7 +26,7 @@ client.on("ready", () => {
 client.on("guildMemberAdd", member => {
     let kanal = member.guild.channels.find(ch => ch.name === `kanal`);
     if(!kanal){
-        member.guild.createChannel("kanal", "voice")
+        member.guild.createChannel("kanal", "text")
         .then(console.log)
         .catch(console.error);
     }else{
