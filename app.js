@@ -24,14 +24,11 @@ client.on("ready", () => {
 });
 
 client.on("guildMemberAdd", member => {
-    let kanal = client.channels.find(ch => ch.name === "gelen-giden");
-    if(!kanal){
-        return console.log("gelen-giden adında bir kanal yok!");
-    }else {
-        kanal.send("Hoşgeldin `" + member.user.tag + "` seninle beraber `" + (client.guild.memberCount) + "` kişi olduk!");
-        console.log((client.users.size - 1) + " Kişi oldu!");
-        return;
-    }
+    member.guild.channels.get('439792255365021696').setName(Total Users: ${member.guild.memberCount})
+    let humans = member.guild.members.filter(m => !m.user.bot).size;
+    member.guild.channels.get('439793088001736725').setName(Member Count: ${humans})
+    let bots = member.guild.members.filter(m => m.user.bot).size;
+    member.guild.channels.get('439793716052623361').setName(Bot Count: ${bots})
 });
   
 client.on("guildMemberRemove", member => {
