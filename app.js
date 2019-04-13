@@ -24,7 +24,8 @@ client.on("ready", () => {
 });
 
 client.on("messageDelete", (messageDelete) =>{
-    let kanal = messageDelete.guild.channels.find(ch => ch.name === "log").catch(console.error);
+    let kanal = messageDelete.guild.channels.find(ch => ch.name === "logs");
+    if(!kanal) return msg.channel.send(kanal.name + " adlı kanal bulunamadı!");
 
     let mesajlog = new Discord.RichEmbed()
     .setTitle(messageDelete.channel.name + " adlı kanaldan " + messageDelete.author.tag + " adlı kişinin mesajı silindi.")
@@ -37,7 +38,9 @@ client.on("messageDelete", (messageDelete) =>{
 });
 
 client.on("guildMemberAdd", member => {
-    let kanal = member.guild.channels.find(ch => ch.name === `gelen`);
+    let kanal = member.guild.channels.find(ch => ch.name === "gelen");
+    if(!kanal) return msg.channel.send(kanal.name + " adlı kanal bulunamadı!");
+    
     let rol = member.guild.roles.find(rol => rol.name === "Üye");    
     member.addRole(rol).catch(console.error);
 
@@ -54,7 +57,8 @@ client.on("guildMemberAdd", member => {
 });
   
 client.on("guildMemberRemove", member => {
-    let kanal = member.guild.channels.find(ch => ch.name === `giden`);
+    let kanal = member.guild.channels.find(ch => ch.name === "giden");
+    if(!kanal) return msg.channel.send(kanal.name + " adlı kanal bulunamadı!");
     
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
