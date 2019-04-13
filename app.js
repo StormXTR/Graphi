@@ -30,10 +30,12 @@ client.on("guildMemberAdd", member => {
 
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle("gelen-giden")
+    .setTitle("gelen-giden kanal log")
+    .setImage(member.user.avatarURL)
     .addField("İsim",member.user.tag)
     .addField("Kişi Sayısı",member.guild.members.size)
-    .addField("Rol",rol.name);
+    .addField("Rol",rol.name)
+    .setFooter("Graphi Bot v1.0",client.user.avatarURL)
 
     kanal.send(embed);
 });
