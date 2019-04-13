@@ -25,10 +25,10 @@ client.on("ready", () => {
 
 client.on("guildMemberAdd", member => {
     let kanal = member.guild.channels.find(ch => ch.name === `gelen-giden`);
-    kanal.send("Hoşgeldin, `"+ `${member.user.tag}` + "` seninle beraber `" + `${member.guild.members.size}` + "` kişi olduk"); 
-    
     let rol = member.guild.roles.find(rol => rol.name === "Üye");
-
+    
+    kanal.send("Hoşgeldin, `"+ `${member.user.tag}` + "` seninle beraber `" + `${member.guild.members.size}` + "` kişi olduk"); 
+    kanal.send("Bot başarılı bir şekilde `" + `${rol.name}` + "` rolünü verdi!")
     member.addRole(rol).catch(console.error);
 });
   
