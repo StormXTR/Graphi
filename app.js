@@ -41,7 +41,7 @@ client.on("guildMemberAdd", member => {
 });
   
 client.on("guildMemberRemove", member => {
-    let kanal = member.guild.channels.find(ch => ch.name === `gelen`);
+    let kanal = member.guild.channels.find(ch => ch.name === `giden`);
     
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
