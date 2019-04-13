@@ -24,14 +24,14 @@ client.on("ready", () => {
 });
 
 client.on("messageDelete", (messageDelete) =>{
-    let kanal = messageDelete.guild.channels.find(ch => ch.name === "logs");
+    let kanal = messageDelete.guild.channels.find(ch => ch.name === "log");
 
     let mesajlog = new Discord.RichEmbed()
     .setTitle(messageDelete.channel.name + " adlı kanaldan " + messageDelete.author.tag + " adlı kişinin mesajı silindi.")
     .setColor("RANDOM")
     .addField("Mesaj İçeriği", messageDelete.content)
-    .addField("Silinme Zamanı", messageDelete.createdTimestamp)
-    .setFooter(client.user.username + messageDelete.crea + " v1.0" , client.user.avatarURL);
+    .addField("Silinme Zamanı", messageDelete.createdAt.getDate)
+    .setFooter(client.user.username + " v1.0" , client.user.avatarURL);
 
     kanal.send(mesajlog);
 });
