@@ -24,11 +24,11 @@ client.on("ready", () => {
 });
 
 client.on("guildMemberAdd", member => {
-    member.guild.channels.get('439792255365021696').setName(`Total Users: ${member.guild.memberCount}`)
+    member.guild.channels.get('439792255365021696').setName(`Total Users: ${member.guild.memberCount}`,``)
     let humans = member.guild.members.filter(m => !m.user.bot).size;
-    member.guild.channels.get('439793088001736725').setName(`Member Count: ${humans}`)
+    member.guild.channels.get('439793088001736725').setName(`Member Count: ${humans}`,``)
     let bots = member.guild.members.filter(m => m.user.bot).size;
-    member.guild.channels.get('439793716052623361').setName(`Bot Count: ${bots}`)
+    member.guild.channels.get('439793716052623361').setName(`Bot Count: ${bots}`,``)
 });
   
 client.on("guildMemberRemove", member => {
