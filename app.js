@@ -24,11 +24,14 @@ client.on("ready", () => {
 });
 
 client.on("guildMemberAdd", member => {
-    member.guild.channels.get('439792255365021696').setName(`Total Users: ${member.guild.memberCount}`,``)
-    let humans = member.guild.members.filter(m => !m.user.bot).size;
-    member.guild.channels.get('439793088001736725').setName(`Member Count: ${humans}`,``)
-    let bots = member.guild.members.filter(m => m.user.bot).size;
-    member.guild.channels.get('439793716052623361').setName(`Bot Count: ${bots}`,``)
+    let kanal = member.guild.channels.find(ch => ch.name === `kanal`);
+    if(!kanal){
+        member.guild.createChannel("kanal", "voice")
+        .then(console.log)
+        .catch(console.error);
+    }else{
+        msg.channel.send("merhaba dünya!")
+}
 });
   
 client.on("guildMemberRemove", member => {
