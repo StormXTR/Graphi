@@ -25,7 +25,7 @@ client.on("ready", () => {
 
 client.on("guildMemberAdd", member => {
     let kanal = member.guild.channels.find(ch => ch.name === `gelen-giden`);
-    kanal.send("Hoşgeldin, `"+ `${member.user.tag}` + "` seninle beraber `" + `${client.users.size}` + " kişi olduk");    
+    kanal.send("Hoşgeldin, `"+ `${member.user.tag}` + "` seninle beraber `" + `${client.users.size}` + "` kişi olduk");    
 });
   
 client.on("guildMemberRemove", member => {
