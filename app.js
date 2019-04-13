@@ -24,7 +24,7 @@ client.on("ready", () => {
 });
 
 client.on("messageDelete", (messageDelete) =>{
-    let kanal = messageDelete.guild.channels.find(ch => ch.name === "log");
+    let kanal = messageDelete.guild.channels.find(ch => ch.name === "logs");
 
     let mesajlog = new Discord.RichEmbed()
     .setTitle(messageDelete.channel.name + " adlı kanaldan " + messageDelete.author.tag + " adlı kişinin mesajı silindi.")
