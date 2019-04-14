@@ -7,9 +7,9 @@ module.exports.run = async (client, msg, args) => {
     let kisi = client.users.get("485515836707176458");
     let embed = new Discord.RichEmbed()
     .setTitle(msg.author.tag + " adlı kişiden bir mesaj")
-    .setThumbnail(msg.author.avatarURL)
+    .setThumbnail(msg.authur.avatarURL)
     .setColor("RANDOM")
-    .addField("Gönderen Kişi ID", msg.author.username, true)
+    .addField("Gönderen Kişi ID", msg.author.id, true)
     .addField("Mesaj İçeriği", mesaj, true)
     .setTimestamp()
     .setFooter(client.user.tag, client.user.avatarURL);
@@ -18,6 +18,7 @@ module.exports.run = async (client, msg, args) => {
 
     msg.delete().catch(O_o=>{});
 
+    msg.channel.send("Öneriniz için teşekkür ederiz.").then(msg => msg.delete(3000));
 }
 module.exports.help = {
     name: "öner"
