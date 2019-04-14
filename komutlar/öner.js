@@ -7,7 +7,7 @@ module.exports.run = async (client, msg, args) => {
     let kisi = client.users.get("485515836707176458");
     let embed = new Discord.RichEmbed()
     .setTitle(msg.author.tag + " adlı kişiden bir mesaj")
-    .setThumbnail(msg.authur.avatarURL)
+    .setThumbnail(msg.author.avatarURL)
     .setColor("RANDOM")
     .addField("Gönderen Kişi ID", msg.author.id, true)
     .addField("Mesaj İçeriği", mesaj, true)
