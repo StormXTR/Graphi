@@ -50,10 +50,10 @@ client.on("guildMemberAdd", member => {
     .setColor("RANDOM")
     .setTitle("gelen kanal log")
     .setThumbnail(member.user.avatarURL)
-    .addField("İsim",member.user.tag)
-    .addField("Kişi Sayısı",member.guild.members.size)
-    .addField("Rol",rol.name)
-    .setFooter("Graphi Bot v1.0");
+    .addField("İsim",member.user.tag,true)
+    .addField("Kişi Sayısı",member.guild.members.size,true)
+    .addField("Rol",rol.name,true)
+    .setFooter("Graphi Bot v1.0",client.user.avatarURL);
 
     kanal.send(embed);
 });
@@ -66,9 +66,9 @@ client.on("guildMemberRemove", member => {
     .setColor("RANDOM")
     .setTitle("giden kanal log")
     .setThumbnail(member.user.avatarURL)
-    .addField("İsim",member.user.tag)
-    .addField("Kişi Sayısı",member.guild.members.size)
-    .setFooter("Graphi Bot v1.0");
+    .addField("İsim",member.user.tag,true)
+    .addField("Kişi Sayısı",member.guild.members.size,true)
+    .setFooter("Graphi Bot v1.0",client.user.avatarURL);
 
     kanal.send(embed);
 });
