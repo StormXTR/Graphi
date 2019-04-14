@@ -48,11 +48,11 @@ client.on("guildMemberAdd", member => {
 
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle("gelen kanal log")
+    .setAuthor("Hoşgeldin" + member.user.tag, client.user.avatarURL)
     .setThumbnail(member.user.avatarURL)
-    .addField("İsim",member.user.tag, true)
     .addField("Kişi Sayısı",member.guild.members.size, true)
-    .addField("Rol",rol.name, true)
+    .addField("Verilen Rol",rol.name, true)
+    .setTimestamp()
     .setFooter("Graphi Bot v1.0");
 
     kanal.send(embed);
@@ -64,10 +64,10 @@ client.on("guildMemberRemove", member => {
     
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
+    .setAuthor("Güle Güle" + member.user.tag, client.user.avatarURL)
     .setTitle("giden kanal log")
     .setThumbnail(member.user.avatarURL)
-    .addField("İsim",member.user.tag,true)
-    .addField("Kişi Sayısı",member.guild.members.size,true)
+    .addField("Kişi Sayısı",member.guild.members.size, true)
     .setFooter("Graphi Bot v1.0");
 
     kanal.send(embed);
