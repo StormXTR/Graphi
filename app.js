@@ -25,7 +25,7 @@ client.on("ready", () => {
 
 client.on("messageDelete", (messageDelete) =>{
     let kanal = messageDelete.guild.channels.find(ch => ch.name === "logs");
-    if(!kanal) return console.log(kanal.name + " adlı kanal bulunamadı!");
+    if(!kanal) return console.log("logs adlı kanal bulunamadı!");
 
     let mesajlog = new Discord.RichEmbed()
     .setTitle(messageDelete.channel.name + " adlı kanaldan " + messageDelete.author.tag + " adlı kişinin mesajı silindi.")
@@ -39,10 +39,10 @@ client.on("messageDelete", (messageDelete) =>{
 
 client.on("guildMemberAdd", member => {
     let kanal = member.guild.channels.find(ch => ch.name === "gelen");
-    if(!kanal) return console.log(kanal.name + " adlı kanal bulunamadı!");
+    if(!kanal) return console.log("gelen adlı kanal bulunamadı!");
     
     let rol = member.guild.roles.find(rol => rol.name === "Üye");
-    if(!rol) return console.log(rol.name + " adlı rol bulunamadı!");
+    if(!rol) return console.log("üye adlı rol bulunamadı!");
 
     member.addRole(rol).catch(console.error);
 
@@ -50,25 +50,25 @@ client.on("guildMemberAdd", member => {
     .setColor("RANDOM")
     .setTitle("gelen kanal log")
     .setThumbnail(member.user.avatarURL)
-    .addField("İsim",member.user.tag,true)
-    .addField("Kişi Sayısı",member.guild.members.size,true)
-    .addField("Rol",rol.name,true)
-    .setFooter("Graphi Bot v1.0",client.user.avatarURL);
+    .addField("İsim",member.user.tag)
+    .addField("Kişi Sayısı",member.guild.members.size)
+    .addField("Rol",rol.name)
+    .setFooter("Graphi Bot v1.0");
 
     kanal.send(embed);
 });
   
 client.on("guildMemberRemove", member => {
     let kanal = member.guild.channels.find(ch => ch.name === "giden");
-    if(!kanal) return console.log(kanal.name + " adlı kanal bulunamadı!");
+    if(!kanal) return console.log("giden adlı kanal bulunamadı!");
     
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setTitle("giden kanal log")
     .setThumbnail(member.user.avatarURL)
-    .addField("İsim",member.user.tag,true)
-    .addField("Kişi Sayısı",member.guild.members.size,true)
-    .setFooter("Graphi Bot v1.0",client.user.avatarURL);
+    .addField("İsim",member.user.tag)
+    .addField("Kişi Sayısı",member.guild.members.size)
+    .setFooter("Graphi Bot v1.0");
 
     kanal.send(embed);
 });
