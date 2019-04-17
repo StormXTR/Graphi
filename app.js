@@ -48,7 +48,7 @@ client.on("guildMemberAdd", member => {
 
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setAuthor("Hoşgeldin" + member.user.tag, client.user.avatarURL)
+    .setAuthor("Hoşgeldin " + member.user.tag, client.user.avatarURL)
     .setThumbnail(member.user.avatarURL)
     .addField("Kişi Sayısı",member.guild.members.size, true)
     .addField("Verilen Rol",rol.name, true)
@@ -64,7 +64,7 @@ client.on("guildMemberRemove", member => {
     
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setAuthor("Güle Güle" + member.user.tag, client.user.avatarURL)
+    .setAuthor("Güle Güle " + member.user.tag, client.user.avatarURL)
     .setTitle("giden kanal log")
     .setThumbnail(member.user.avatarURL)
     .addField("Kişi Sayısı",member.guild.members.size, true)
