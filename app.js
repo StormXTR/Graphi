@@ -18,9 +18,7 @@ client.commands = new Discord.Collection();
             console.log(`[${i + 1}] - ${f} Yüklendi!`);
             client.commands.set(props.help.name, props);
         });
-        client.guilds.forEach((i) => {
-            console.log(i);
-        });
+        client.guilds.forEach(i => console.log(i));
     });
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
