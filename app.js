@@ -48,9 +48,8 @@ client.on("guildMemberAdd", member => {
 
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setAuthor("Hoşgeldin " + member.user.tag, client.user.avatarURL)
-    .setThumbnail(member.user.avatarURL)
-    .addField("Kişi Sayısı",member.guild.members.size, true)
+    .setAuthor("Hoşgeldin " + member.user.tag, member.user.avatarURL)
+    .addField("Kişi Sayısı", member.guild.members.size, true)
     .addField("Verilen Rol",rol.name, true)
     .setTimestamp()
     .setFooter("Graphi Bot v1.0");
