@@ -25,7 +25,6 @@ client.on("ready", () => {
     console.log("Sunucular:")
     client.guilds.forEach(function(guild) {
         console.log(" - " + guild.name);
-        guild.send("bir deneme mesajıdır.");    
     });
 });
 
