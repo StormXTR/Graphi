@@ -10,7 +10,6 @@ module.exports.run = async (client, msg, args) => {
         if(mesaj.length < 0){
             return msg.channel.send("Bir mesaj giriniz.");
         }
-        if()
 
         msg.guild.members.forEach(function(uyeler) {
             let embed = new Discord.RichEmbed()
