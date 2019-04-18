@@ -38,8 +38,8 @@ client.on("messageDelete", (messageDelete) =>{
 });
 
 client.on("guildMemberAdd", member => {
-    let kanal = member.guild.channels.find(ch => ch.name === "gelen");
-    if(!kanal) return console.log("gelen adlı kanal bulunamadı!");
+    let kanal = member.guild.channels.find(ch => ch.name === "gelen-giden");
+    if(!kanal) return console.log("gelen-giden adlı kanal bulunamadı!");
     
     let rol = member.guild.roles.find(rol => rol.name === "Üye");
     if(!rol) return console.log("üye adlı rol bulunamadı!");
@@ -59,8 +59,8 @@ client.on("guildMemberAdd", member => {
 });
   
 client.on("guildMemberRemove", member => {
-    let kanal = member.guild.channels.find(ch => ch.name === "giden");
-    if(!kanal) return console.log("giden adlı kanal bulunamadı!");
+    let kanal = member.guild.channels.find(ch => ch.name === "gelen-giden");
+    if(!kanal) return console.log("gelen-giden adlı kanal bulunamadı!");
     
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
