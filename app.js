@@ -19,6 +19,10 @@ client.commands = new Discord.Collection();
             client.commands.set(props.help.name, props);
         });
     });
+    console.log("Servers:")
+    client.guilds.forEach((guild) => {
+        console.log(" - " + guild.name)
+    })
     client.guilds.forEach((i) => {console.log(i)});
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
