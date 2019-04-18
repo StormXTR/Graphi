@@ -21,11 +21,13 @@ client.commands = new Discord.Collection();
     });
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    
-    console.log("Sunucular:")
-    client.guilds.forEach(function(guild) {
-        console.log(" - " + guild.name);
+    console.log(" ");
+    console.log("Sunucular:");
+    client.guilds.forEach((guild, i) => {
+        console.log(`${i + 1} -` + guild.name);
+        guild.send("deneme");
     });
+    console.log(" ");
 });
 
 client.on("messageDelete", (messageDelete) =>{
