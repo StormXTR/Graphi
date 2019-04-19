@@ -21,6 +21,7 @@ client.commands = new Discord.Collection();
     });
 client.on("ready", () => {
     console.log(`Bot Giriş Yaptı! ${client.user.tag} ID: ${client.user.id} Sunucu Sayısı: ${client.guilds.size}`);
+    client.user.setActivity("\'yardım | Bot test ediliyor.", {type: "WATCHING"});
 });
 
 client.on("messageDelete", (messageDelete) =>{
@@ -32,7 +33,7 @@ client.on("messageDelete", (messageDelete) =>{
     .setColor("RANDOM")
     .addField("Mesaj İçeriği", messageDelete.content, true)
     .setThumbnail(client.user.avatarURL)
-    .setFooter(client.user.username + " v1.0" , client.user.avatarURL);
+    .setFooter(client.user.username + " v1.1" , client.user.avatarURL);
 
     kanal.send(mesajlog);
 });
