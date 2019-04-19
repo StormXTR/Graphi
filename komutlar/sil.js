@@ -9,8 +9,10 @@ module.exports.run = async (client, msg, args) => {
     
     const fetched = await msg.channel.fetchMessages({limit: miktar});
     msg.channel.bulkDelete(fetched)
-    .then(msg => msg.channel.send("`" + fetched + "` tane mesaj silindi!"))
     .catch(hata => console.log(`Hata: ${hata}`));
+
+    msg.content.send("`" + fetched + "` tane mesaj silindi!")
+    .then(msg => msg.delete(3000)); // 3 saniye sonra mesajı siler
 }
 
 module.exports.help = {

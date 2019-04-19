@@ -24,7 +24,7 @@ client.on("ready", () => {
     client.user.setActivity("\'yardım | Bot test ediliyor.", {type: "WATCHING"});
 });
 
-client.on("messageDelete", (messageDelete) =>{
+client.on("messageDelete", (messageDelete) => {
     let kanal = messageDelete.guild.channels.find(ch => ch.name === "logs");
     if(!kanal) return console.log("logs adlı kanal bulunamadı!");
 
