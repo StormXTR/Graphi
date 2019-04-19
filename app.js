@@ -19,9 +19,21 @@ client.commands = new Discord.Collection();
             client.commands.set(props.help.name, props);
         });
     });
+
+    // durumlar
+    const durumlar = [
+        "\`yardım | Sunucu Sayısı: " + client.guilds.size,
+        "\'yardım | Toplam Kişi Sayısı: " + client.users.size
+    ];
+
 client.on("ready", () => {
+    // durum değiştirme
+    setInterval(() => {
+        const index = Math.floor(Math.random() * (durumlar.length - 1) + 1);
+        client.user.setActivity(durumlar[index]);
+    }, 6000); // her 6 saniye de 1 durum değişir.
+    // durum değiştirme bitiş
     console.log(`Bot Giriş Yaptı! ${client.user.tag} ID: ${client.user.id} Sunucu Sayısı: ${client.guilds.size}`);
-    client.user.setActivity("\'yardım | Bot test ediliyor.", {type: "WATCHING"});
 });
 
 client.on("messageDelete", (messageDelete) => {
