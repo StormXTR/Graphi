@@ -20,7 +20,7 @@ client.commands = new Discord.Collection();
         });
     });
 client.on("ready", () => {
-    console.log(`Bot Giriş Yaptı! ${client.user.tag} ID: ${client.user.id} Sunucu Sayısı: ${client.users.size}`);
+    console.log(`Bot Giriş Yaptı! ${client.user.tag} ID: ${client.user.id} Sunucu Sayısı: ${client.guilds.size}`);
 });
 
 client.on("messageDelete", (messageDelete) =>{
