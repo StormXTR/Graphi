@@ -3,12 +3,14 @@ const Discord = require("discord.js");
 module.exports.run = async (client, msg, args) => {
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle(client.user.username + " Bot Bilgi")
-    .addField("Hizmet verilen sunucu sayısı", client.guilds.size)
+    .setAthor(msg.author.tag + " adlı kişi botbilgi komutunu kullandı",msg.author.avatarURL)
+    .addField("Sunucu Sayısı", client.guilds.size,true)
     .addField("Discord JS Sürümü", "v"+Discord.version, true)
     .addField("Ping", client.ping + " MS",true)
-    .setFooter(client.user.username + " v1.0", client.user.avatarURL);
+    .setThumbnail(client.user.avatarURL)
+    .setFooter(client.user.username + " v1.1");
 
+    msg.delete().catch(O_o=>{});
     msg.channel.send(embed);
 }
 

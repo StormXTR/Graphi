@@ -7,9 +7,7 @@ module.exports.run = async (client, msg, args) => {
     }
     else{
         let mesaj = args.join(" ");
-        if(mesaj.length < 0){
-            return msg.channel.send("Bir mesaj giriniz.");
-        }
+        if(!mesaj) return msg.reply("Bir Mesaj Giriniz!");
 
         msg.guild.members.forEach(function(uyeler) {
             let embed = new Discord.RichEmbed()
@@ -27,5 +25,5 @@ module.exports.run = async (client, msg, args) => {
 }
 
 module.exports.help = {
-    name: "ozelmesaj"
+    name: "mesaj"
 }
