@@ -28,10 +28,10 @@ client.commands = new Discord.Collection();
 
 client.on("ready", () => {
     // durum değiştirme
-    setInterval(() => {
-        const index = Math.floor(Math.random() * (durumlar.length - 1) + 1);
-        client.user.setActivity(durumlar[index]);
-    }, 6000); // her 6 saniye de 1 durum değişir.
+    setInterval(function() {
+        var actID = Math.floor(Math.random() * Math.floor(durumlar.length));
+        client.user.setActivity(actID);
+    }, 5000)
     // durum değiştirme bitiş
     console.log(`Bot Giriş Yaptı! ${client.user.tag} ID: ${client.user.id} Sunucu Sayısı: ${client.guilds.size}`);
 });
