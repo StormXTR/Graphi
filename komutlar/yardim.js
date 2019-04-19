@@ -9,6 +9,8 @@ module.exports.run = async (client, msg, args) => {
     .addField("\'öner <mesaj>", "Bot önerilerinizi buradan ulaştıra bilirsiniz.",true)
     .setFooter(client.user.tag + " v1.1");
     
+    msg.delete().catch(O_o=>{});
+    msg.channel.send(embed);
 }
 
 module.exports.help = {
