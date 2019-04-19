@@ -7,6 +7,7 @@ module.exports.run = async (client, msg, args) => {
     .setThumbnail(client.user.avatarURL)
     .addField("\'botbilgi", "Bot Hakkındaki bilgileri gösterir.",true)
     .addField("\'öner <mesaj>", "Bot önerilerinizi buradan ulaştıra bilirsiniz.",true)
+    .addField("\'sunucudurum", "Bu komut ile birlikte sunucunun durumunu öğrenebilirsiniz.",true)
     .setFooter(client.user.tag + " v1.1");
     
     msg.delete().catch(O_o=>{});
