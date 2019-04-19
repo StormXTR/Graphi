@@ -21,17 +21,11 @@ client.commands = new Discord.Collection();
     });
 
     // durumlar
-    const durumlar = [
-        "\`yardım | Sunucu Sayısı: " + client.guilds.size,
-        "\'yardım | Toplam Kişi Sayısı: " + client.users.size
-    ];
+
 
 client.on("ready", () => {
     // durum değiştirme
-    setInterval(function() {
-        var actID = Math.floor(Math.random() * Math.floor(durumlar.length));
-        client.user.setActivity(actID);
-    }, 5000)
+
     // durum değiştirme bitiş
     console.log(`Bot Giriş Yaptı! ${client.user.tag} ID: ${client.user.id} Sunucu Sayısı: ${client.guilds.size}`);
 });
