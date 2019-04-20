@@ -11,7 +11,7 @@ module.exports.run = async (client, msg, args) => {
     msg.channel.bulkDelete(fetched)
     .catch(hata => console.log(`Hata: ${hata}`));
 
-    msg.content.send("`" + fetched + "` tane mesaj silindi!")
+    msg.channel.send("`" + fetched + "` tane mesaj silindi!")
     .then(msg => msg.delete(3000)); // 3 saniye sonra mesajı siler
 }
 
