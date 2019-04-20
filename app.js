@@ -24,15 +24,7 @@ client.commands = new Discord.Collection();
 
 
 client.on("ready", () => {
-    // durum değiştirme
-     setInterval(async () => {
-    const yazilar = [
-      `\'yardım | Sunucu Sayısı: ${msg.guild.size}`,
-      `\'yardım | Toplam Kişi Sayısı: ${msg.guild.size}`
-    ];
-    const karistir = Math.floor(Math.random() * yazilar.length);
-    client.user.setActivity(`${yazilar[karistir]}`, {  type: "WATCHING"});
-    }, 3000);  // Değişme süresi    
+    // durum değiştirme 
     // durum değiştirme bitiş
     console.log(`Bot Giriş Yaptı! ${client.user.tag} ID: ${client.user.id} Sunucu Sayısı: ${client.guilds.size}`);
 });
