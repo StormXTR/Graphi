@@ -2,17 +2,27 @@ const Discord = require("discord.js");
 
 module.exports.run = async (client, msg, args) => {
 
-    const miktar = parseInt(args[0], 10);
+    let miktar = parseInt(args[0], 10);
 
-    if(miktar.length < 2 || miktar.length > 100)
-        return msg.content.send("Miktar 2\'den az veya 100\'den fazla olmamalı!").then(msg => msg.delete(3000));
-    
-    const fetched = await msg.channel.fetchMessages({limit: miktar});
-    msg.channel.bulkDelete(fetched)
-    .catch(hata => console.log(`Hata: ${hata}`));
+    if(isNaN(miktar)){
+        msg.delete();
+        return msg.reply("Bir sayı girmelisin!")
+            .then(msg => msg.delete(3000));
+    }
 
-    msg.channel.send("`" + fetched + "` tane mesaj silindi!")
-    .then(msg => msg.delete(3000)); // 3 saniye sonra mesajı siler
+    if(miktar < 2 || miktar > 100)
+        return msg.reply("miktar 2\'den fazla ve 100\'den az olmalı!").then(msg => msg.delete(3000));
+
+    if(!msg.member.hasPermission("MANAGE_MESSAGES")) {
+        return msg.reply("Bu komutu kullanmak için gerekli izine sahip değilsin!")
+            .then(msg => msg.delete(3000));
+    }
+            const fetched = await msg.channel.fetchMessages({limit: miktar + 1});
+            msg.channel.bulkDelete(fetched)
+                .catch(err => console.log(err));
+
+            msg.channel.send("`" + miktar + "` tane mesaj silindi!")
+                .then(msg => msg.delete(3000));
 }
 
 module.exports.help = {
